@@ -31,6 +31,7 @@ document.body.innerHTML += `<ul> ${wrappedList
     return item.outerHTML;
   })
   .join("")} </ul>`;
+
 function addSpinnerClass(el) {
   el.classList.add("spinner");
   return el;
@@ -110,7 +111,8 @@ safeElListMap(x => x, null);
 const compareNumbers = (a, b) => {
   if (a === b) return 0;
   if (a > b) return 1;
-  /* else */ return -1;
+  /* else */
+  return -1;
 };
 
 let nums = [7, 3, 1, 5, 8, 9, 6, 4, 2];
@@ -118,37 +120,36 @@ nums.sort(compareNumbers);
 console.log(nums);
 // 〕[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-const typeaheadMatches = [
-  {
-    keyword: "bogey",
-    weight: 0.25,
-    matchedChars: ["bog"]
-  },
-  {
-    keyword: "bog",
-    weight: 0.5,
-    matchedChars: ["bog"]
-  },
-  {
-    keyword: "boggle",
-    weight: 0.3,
-    matchedChars: ["bog"]
-  },
-  {
-    keyword: "bogey",
-    weight: 0.25,
-    matchedChars: ["bog"]
-  },
-  {
-    keyword: "toboggan",
-    weight: 0.15,
-    matchedChars: ["bog"]
-  },
-  {
-    keyword: "bag",
-    weight: 0.1,
-    matchedChars: ["b", "g"]
-  }
+const typeaheadMatches = [{
+  keyword: "bogey",
+  weight: 0.25,
+  matchedChars: ["bog"]
+},
+{
+  keyword: "bog",
+  weight: 0.5,
+  matchedChars: ["bog"]
+},
+{
+  keyword: "boggle",
+  weight: 0.3,
+  matchedChars: ["bog"]
+},
+{
+  keyword: "bogey",
+  weight: 0.25,
+  matchedChars: ["bog"]
+},
+{
+  keyword: "toboggan",
+  weight: 0.15,
+  matchedChars: ["bog"]
+},
+{
+  keyword: "bag",
+  weight: 0.1,
+  matchedChars: ["b", "g"]
+}
 ];
 
 function compareTypeaheadResult(word1, word2) {

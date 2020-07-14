@@ -1,13 +1,26 @@
-/*
-            1. Given this array: `[3,62,234,7,23,74,23,76,92]`,
-            use the array filter method and an arrow function to create an array of the numbers greater than `70`
-            */
-const { table: log_table, error } = console;
-const ages = [3, 62, 234, 7, 23, 74, 23, 76, 92];
-/* Filter the startks */
+const listOfSome = [
+  {firstName: 'Martin', lastName :'Jonas'},
+  {firstName:'Brad',lastName:'Mickle'},
+  {firstName: 'Summer', lastName:'Bride'}
+  ];
+  let ans = listOfSome.filter(function (item) {
+    return item.firstName.toLowerCase().search('b') !== -1 || item.lastName.toLowerCase().search('b') !== -1;
+  });
+console.log(ans);
+
+
+
+const { log, table: log_table, error, clear } = console;
+
+const ages = [3, 62, 24, 70, 23, 74, 23, 76, 92];
+
 const agesFiltered = ages.filter(age => age > 70);
 log_table(agesFiltered);
 
+let wzz = 1;
+let szz = wzz;
+wzz = 0;
+log(wzz,szz);
 let x = [10, 20, 30, 40, 50];
 let [y, z, ...rest] = x;
 log(x);
@@ -48,23 +61,26 @@ let people = [
     age: 25
   }
 ];
-
-for (let {
-  name: n,
-  family: { father: f }
-} of people) {
+ 
+for (let { name: n, family: { father: f } } of people) {
   log("Name: " + n + ", Father: " + f);
 }
 
-let user = {
+const user = {
   id: 42,
-  displayName: "jdoe",
+  displayName: "jdoe", 
   fullName: {
     firstName: "John",
     lastName: "Doe"
   }
 };
-userId = ({ id }) => id;
+
+// clear();
+const secondUser = {...user};
+secondUser.displayName = "X";
+log(`secondUser : ${secondUser.displayName}`);
+const userId = ({ id }) => id;
+
 log("userId: " + userId(user)); // "userId: 42"
 
 const whois = ({ displayName: displayName, fullName: { firstName: name } }) =>
